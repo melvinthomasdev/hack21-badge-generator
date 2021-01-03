@@ -74,12 +74,24 @@ WSGI_APPLICATION = 'badge_generator.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+     'default': {
+         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+         'NAME': 'badge_gen',
+         'USER': 'badge_gen_user',
+         'PASSWORD': '',
+         'HOST':'localhost',
+         'port': ''
+ }
 }
+
 
 
 # Password validation
