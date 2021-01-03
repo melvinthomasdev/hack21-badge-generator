@@ -1,18 +1,48 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <form method="POST" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Generate Badge</button>
-    </form>
-    {% if img %}
-        <img src="{{ img }}">
-    {% endif %}
-</body>
-</html>
+
+{% extends 'base.html' %} 
+{% load static %}
+{% block breadcrumb %}
+{% endblock %} 
+
+
+{% block content %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<style>
+    .shadow-sm {
+    box-shadow: 0 0.525rem 0.95rem 0 rgba(58, 59, 69, 0.2) !important;
+}
+</style>
+<div class="container">
+    <div class="main-body">
+        <div class="row gutters-sm">
+
+            <div class="col-md-8 col-sm-12 col-xs-12 offset-md-2">
+                <div class="row gutters-sm">
+                    <div class="col">
+                        <div style="text-align: center; margin: 1.5rem 1.5rem; "><h2>.hack(); Badge Generator</h2></div>
+                        <div class="card shadow-smmb-3">
+                            <div class="card-body shadow-sm">
+                                
+                                <p> Enter your name and upload an Image to generate your .hack(); Badge</p>
+
+                                <form method="POST" enctype="multipart/form-data" style="margin: 2rem;" >
+                                    {% csrf_token %}
+                                    {{ form.as_p }}
+                                    <button type="submit" class="btn btn-primary btn-rounded" >Generate Badge</button>
+                                </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock content %}
+
+
+
+
+

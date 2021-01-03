@@ -1,0 +1,40 @@
+body {
+  font-family: "Roboto Mono", monospace;
+  color: #36313d !important; }
+
+.custom-navbar-title-container {
+  background-color: #1bb35f;
+  display: flex;
+  justify-content: center;
+  font-family: 'Roboto'; }
+
+.custom-navbar-title {
+  font-size: 2.2rem;
+  padding-left: 1rem;
+  font-weight: 700; }
+  .custom-navbar-title li {
+    font-family: "Roboto Mono", monospace;
+    color: white !important; }
+
+.custom-card {
+  padding-left: 1rem;
+margin-bottom: 2rem;
+ }
+  .custom-card .card-title {
+    margin: 0 0 2rem 0;
+    font-size: 2.2rem; }
+  .custom-card h2 {
+    font-weight: 600;
+    margin-bottom: 2rem;
+    text-transform: capitalize; }
+  .custom-card .btn {
+    margin-bottom: 2rem; }
+  .custom-card .btn-primary {
+    border-radius: 4px;
+    background-color: white;
+    /* border: 3px solid #169b52; */
+    font-weight: 700;
+    color: #36313d; }
+    .custom-card .btn-primary:hover {
+      background-color: #1bb35f;
+      color: white; }

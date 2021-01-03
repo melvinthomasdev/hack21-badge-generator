@@ -51,7 +51,7 @@ def get_fontsize(image, txt,fraction=1.0):
 def index_view(request):
     context = {}
     response = HttpResponse(content_type='image/png')
-    filename = 'proud_volunteer'
+    # filename = 'proud_volunteer'
     if request.POST:
         form = ImageUploadForm(request.POST, request.FILES)
         if form.is_valid():
@@ -97,7 +97,7 @@ def index_view(request):
                 name_position = (83,892)
                 image_copy.paste(label, name_position, label)
                 image_copy.save('pasted_image.jpg')
-                response['Content-Disposition'] = 'attachment; filename=%s.png' % filename
+                response['Content-Disposition'] = 'attachment; filename=%s.png' % name
                 image_copy.save(response, 'png')
                 return response
         else:

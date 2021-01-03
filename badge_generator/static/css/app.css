@@ -1,0 +1,23 @@
+ .navbar-brand {
+ 	font-family: 'Quicksand' , cursive;
+ }
+
+ .join_req{
+	 /* border: 2px solid #33b19f !important; */
+	 margin: 1rem;
+	 height: 3rem;
+ }
+
+ div > ol{
+	 list-style: none;
+ }
+ div > li{
+	 font-size: large;
+	 position: relative;
+	 vertical-align: middle;
+	 
+ }
+
+ div > li > span{
+	 margin-left: 2rem;
+ }
