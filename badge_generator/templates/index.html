@@ -9,7 +9,7 @@
     <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit">Upload image</button>
+        <button type="submit">Generate Badge</button>
     </form>
     {% if img %}
         <img src="{{ img }}">
