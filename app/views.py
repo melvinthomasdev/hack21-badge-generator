@@ -29,7 +29,7 @@ def generate_badge(src):
     image_copy = template.copy()
     position = (144, 401)
     image_copy.paste(thumbimg, position)
-    image_copy.save('pasted_image.jpg')
+    image_copy.save('pasted_image.png')
 
 def get_fontsize(image, txt,fraction=1.0):
     fontsize = 1  # starting font size
@@ -96,7 +96,7 @@ def index_view(request):
                 draw.text(position, name, color, font=font)
                 name_position = (83,892)
                 image_copy.paste(label, name_position, label)
-                image_copy.save('pasted_image.jpg')
+                image_copy.save('pasted_image.png')
                 response['Content-Disposition'] = 'attachment; filename=%s.png' % name
                 image_copy.save(response, 'png')
                 return response
