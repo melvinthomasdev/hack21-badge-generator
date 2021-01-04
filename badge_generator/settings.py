@@ -151,6 +151,6 @@ os.path.join(BASE_DIR, 'static'),
 
 # root = os.path.dirname(os.path.abspath(__file__))
 # print(root)
-STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # django_heroku.settings(locals())
