@@ -30,7 +30,7 @@ SECRET_KEY = '70$17+@qtac5n!uccn**83@l7t13=_vk%$zuc)_1!w@z&jekr8'
 # DEBUG = True
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -142,7 +142,7 @@ USE_TZ = True
 
 # STATIC_URL = '/static/'
 
-STATIC_URL = "/staticfiles/"
+STATIC_URL = "/static/"
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 STATICFILES_DIRS = [
 os.path.join(BASE_DIR, 'static'),
