@@ -152,6 +152,6 @@ os.path.join(BASE_DIR, 'static'),
 # root = os.path.dirname(os.path.abspath(__file__))
 # print(root)
 # STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-STATICFILES_STORAGE = 'badge_generator.storage.WhiteNoiseStaticFilesStorage'
+# STATICFILES_STORAGE = 'badge_generator.storage.WhiteNoiseStaticFilesStorage'
 
 # django_heroku.settings(locals())
