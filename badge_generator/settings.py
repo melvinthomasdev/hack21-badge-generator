@@ -147,6 +147,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 STATICFILES_DIRS = [
 os.path.join(BASE_DIR, 'static'),
 ]
+# WHITENOISE_USE_FINDERS = True
 
 # root = os.path.dirname(os.path.abspath(__file__))
 # print(root)
