@@ -1,1 +1,1 @@
-web: gunicorn badge_generator.wsgi --timeout 15 --keep-alive 5 --log-level debug
+web: gunicorn badge_generator.wsgi --timeout 30 --keep-alive 5 --log-level debug
