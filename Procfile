@@ -1,1 +1,1 @@
-web: gunicorn badge_generator.wsgi --timeout 30 --keep-alive 5 --log-level debug
+web: waitress-serve --port=8000 badge_generator.wsgi:application
