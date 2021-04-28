@@ -221,7 +221,7 @@ def index_view(request):
                 position = (298, 282)  #topleft corner
                 template_copy.paste(hacker_img, position)
 
-                name = input("Enter Your Name:").title()
+                # name = input("Enter Your Name:").title()
                 name_label = create_label(name, hacker_img)
                 name_position = (79, 970)
                 template_copy.paste(name_label, name_position, name_label)
