@@ -10,7 +10,7 @@ from .forms import ImageUploadForm
 
 root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # print(root)
-template_url = root + staticfiles_storage.url('img/cosmok.jpg')
+template_url = root + staticfiles_storage.url('img/sight.jpg')
 fontname_url = root + staticfiles_storage.url('fonts/Montserrat-Regular.ttf')
 template = Image.open(template_url)
 
