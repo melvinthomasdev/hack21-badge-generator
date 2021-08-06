@@ -62,9 +62,18 @@ def index_view(request):
                 src_img = request.FILES.get("image")
                 name = form.cleaned_data.get('name').title()
                 # context['img'] = src_img
+                #width, height
                 thumbimg = Image.open(src_img)
-                reqht = 262
-                reqwd = int((thumbimg.width/thumbimg.height)*262)
+                img_width, img_height = thumbimg.size
+                if thumbimg.width > thumbimg.height:
+                    reqht = 262
+                    reqwd = int((thumbimg.width/thumbimg.height)*262)
+                if thumbimg.width < thumbimg.height:
+                    reqwd = 262
+                    reqht = int((thumbimg.height/thumbimg.width)*262)
+                if thumbimg.width == thumbimg.height:
+                    reqwd = reqht = 262
+
                 thumbimg = thumbimg.resize((reqwd, reqht))
                 width, height = thumbimg.size
                 left = (width - 262)/2
