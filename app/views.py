@@ -90,7 +90,7 @@ def index_view(request):
                 print(thumbimg.size)
                 image_copy = template.copy()
                 image_copy.convert("RGBA")
-                position = (260, 319)
+                position = (315, 260)
                 image_copy.paste(thumbimg, position, thumbimg)
                 draw = ImageDraw.Draw(image_copy)
                 # name = "john".title()
