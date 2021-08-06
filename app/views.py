@@ -112,7 +112,7 @@ def index_view(request):
                 text_width, text_height = draw.textsize(name, font)
                 position = ((strip_width-text_width)/2,(strip_height-text_height)/2)
                 draw.text(position, name, color, font=font)
-                name_position = (0,681)
+                name_position = (0,622)
                 image_copy.paste(label, name_position, label)
                 # image_copy.save('pasted_image.png')
                 response['Content-Disposition'] = 'attachment; filename=%s.png' % name
