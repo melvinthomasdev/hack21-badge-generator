@@ -155,7 +155,7 @@ def index_view(request):
 
                 # image_copy.save('pasted_image.png')
                 # response['Content-Disposition'] = 'attachment; filename=%s.png' % name
-                response['Content-Disposition'] = 'attachment; filename=%s.png' % "IEEEXtreme Badge"
+                response['Content-Disposition'] = 'attachment; filename=%s.png' % "AISYWLC Badge"
                 image_copy.save(response, 'png')
                 return response
         else:
