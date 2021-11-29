@@ -60,7 +60,7 @@ def index_view(request):
         if form.is_valid():
             if request.FILES:
                 src_img = request.FILES.get("image")
-                name = " ".join(form.cleaned_data.get('name').title().split())
+                name = " ".join(form.cleaned_data.get('name').upper().split())
                 # college_name = " ".join(form.cleaned_data.get('college_name').title().split())
                 # context['img'] = src_img
                 #width, height
