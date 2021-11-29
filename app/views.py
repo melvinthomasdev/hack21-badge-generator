@@ -8,6 +8,7 @@ import os
 # import numpy as np
 
 from .forms import ImageUploadForm
+from .models import People
 
 root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # print(root)
@@ -157,6 +158,7 @@ def index_view(request):
                 # response['Content-Disposition'] = 'attachment; filename=%s.png' % name
                 response['Content-Disposition'] = 'attachment; filename=%s.png' % "AISYWLC Badge"
                 image_copy.save(response, 'png')
+                People.objects.create(name=name)
                 return response
         else:
             context['form'] = form
