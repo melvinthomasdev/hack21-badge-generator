@@ -11,7 +11,7 @@ from .forms import ImageUploadForm
 
 root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # print(root)
-template_url = root + staticfiles_storage.url(r'img\xtreme_par.png')
+template_url = root + staticfiles_storage.url(r'img\aisywlc.png')
 fontname_url = root + staticfiles_storage.url(r'fonts\Roboto-Regular.ttf')
 # circle_image_url = root
 template = Image.open(template_url)
@@ -67,27 +67,27 @@ def index_view(request):
                 thumbimg = Image.open(src_img)
                 img_width, img_height = thumbimg.size
                 if thumbimg.width > thumbimg.height:
-                    reqht = 1325
-                    reqwd = int((thumbimg.width/thumbimg.height)*1325)
+                    reqht = 209
+                    reqwd = int((thumbimg.width/thumbimg.height)*209)
                 if thumbimg.width < thumbimg.height:
-                    reqwd = 1325
-                    reqht = int((thumbimg.height/thumbimg.width)*1325)
+                    reqwd = 209
+                    reqht = int((thumbimg.height/thumbimg.width)*209)
                 if thumbimg.width == thumbimg.height:
-                    reqwd = reqht = 1325
+                    reqwd = reqht = 209
 
                 thumbimg = thumbimg.resize((reqwd, reqht))
                 width, height = thumbimg.size
-                left = (width - 1325)/2
-                top = (height - 1325)/2
-                right = (width + 1325)/2
-                bottom = (height + 1325)/2
+                left = (width - 209)/2
+                top = (height - 209)/2
+                right = (width + 209)/2
+                bottom = (height + 209)/2
                 thumbimg = thumbimg.crop((left, top, right, bottom))
                 # im_square = crop_max_square(thumbimg).resize((reqwd, reqwd), Image.LANCZOS)
                 # thumbimg = mask_circle_transparent(im_square, 0)
                 # thumbimg.save('circle.png')
                 # thumbimg = Image.open('circle.png')
                 # thumbimg.save(response, 'png')
-                thumbimg = thumbimg.resize((1325, 1325))
+                thumbimg = thumbimg.resize((209, 209))
                 bigsize = (thumbimg.size[0] * 3, thumbimg.size[1] * 3)
                 mask = Image.new('L', bigsize, 0)
                 draw = ImageDraw.Draw(mask) 
@@ -100,7 +100,7 @@ def index_view(request):
                 print(thumbimg.size)
                 image_copy = template.copy()
                 image_copy.convert("RGBA")
-                position = (1338, 1483) #(y, x)
+                position = (320, 558) #(y, x)
                 image_copy.paste(thumbimg, position, thumbimg)
                 draw = ImageDraw.Draw(image_copy)
                 # name = "john".title()
@@ -108,17 +108,17 @@ def index_view(request):
 
 
                 name_fontsize = get_fontsize(thumbimg, name)
-                name_fontsize = 500 if name_fontsize>500 else name_fontsize
+                name_fontsize = 38 if name_fontsize>38 else name_fontsize
                 # name_fontsize=300
                 print('font size',name_fontsize)
                 # (x, y) = (79,970)
-                if name_fontsize<150:
-                    name_fontsize = get_fontsize(thumbimg, name, 1.7)
-                    print("After adjusting:", name_fontsize)
+                # if name_fontsize<25:
+                #     name_fontsize = get_fontsize(thumbimg, name, 1.7)
+                #     print("After adjusting:", name_fontsize)
                     # (x, y) = (79, 970)
                 font = ImageFont.truetype(fontname_url, size=name_fontsize)
-                color = 'rgb(000,000,000)' # black color
-                strip_width, strip_height = 2556, 642
+                color = 'rgb(000,032,077)' # black color
+                strip_width, strip_height = 445, 33
                 name_label = Image.new("RGBA", (strip_width,strip_height), (0,0,0,0))
                 draw = ImageDraw.Draw(name_label)
                 name_label.putalpha(1)
@@ -126,7 +126,7 @@ def index_view(request):
                 text_width, text_height = draw.textsize(name, font)
                 position = ((strip_width-text_width)/2,(strip_height-text_height)/2)
                 draw.text(position, name, color, font=font)
-                name_position = (722,2951)
+                name_position = (200,788)
                 image_copy.paste(name_label, name_position, name_label)
 
 
